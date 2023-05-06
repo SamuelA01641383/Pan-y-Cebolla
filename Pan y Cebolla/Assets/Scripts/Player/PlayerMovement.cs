@@ -7,14 +7,15 @@ public class PlayerMovement : MonoBehaviour
     //Variables de control para movimiento del personaje.
     private float velocidad, fuerzaSalto, gravedad;
     private float dashSpeed, dashMultiplier, dashTime, starDashTime, dashDelay, startDashDelay;
-    protected bool mirandoDerecha;
+    public bool mirandoDerecha;
     public bool saltando;
     private Rigidbody2D RB;
 
     public enum PlayerActions
     {
         DASH,
-        MOVE
+        MOVE,
+        SHOT
     }
 
     public PlayerActions currentAction;
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(mirandoDerecha);
         ManejarMovimiento();
         ManejarSalto();
         ManejarDash();
