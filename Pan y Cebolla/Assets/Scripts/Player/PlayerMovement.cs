@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //Variables de control para movimiento del personaje.
     private float velocidad, fuerzaSalto, gravedad;
-    private float dashSpeed, dashMultiplier, dashTime, starDashTime;
+    private float dashSpeed, dashMultiplier, dashTime, starDashTime, dashDelay, startDashDelay;
     protected bool mirandoDerecha;
     public bool saltando;
     private Rigidbody2D RB;
@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     {
         RB = this.gameObject.GetComponent<Rigidbody2D>();
 
+        startDashDelay = 0.1f;
+        dashDelay = 0f;
         starDashTime = 0.15f;
         dashTime = starDashTime;
         currentAction = PlayerActions.MOVE;
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        checkDash();
     }
 
     public void ManejarMovimiento()
@@ -88,9 +90,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void ManejarDash()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentAction != PlayerActions.DASH)
+        if(dashDelay > 0f)
         {
-            currentAction = PlayerActions.DASH;
+            dashDelay -= Time.deltaTime;
         }
 
         if (currentAction == PlayerActions.DASH)
@@ -111,7 +113,16 @@ public class PlayerMovement : MonoBehaviour
                 currentAction = PlayerActions.MOVE;
                 RB.velocity = new Vector2(dashSpeed/2,0);
                 dashTime = starDashTime;
+                dashDelay = startDashDelay;
             }
+        }
+    }
+
+    private void checkDash()
+    {
+        if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0)
+        {
+            currentAction = PlayerActions.DASH;
         }
     }
 
