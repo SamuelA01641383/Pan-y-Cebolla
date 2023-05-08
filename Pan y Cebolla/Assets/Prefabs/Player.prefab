@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 221774096770674750}
   - component: {fileID: 221774096770674745}
   - component: {fileID: 1737708356519956155}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4618554958270913830}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AttackSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}

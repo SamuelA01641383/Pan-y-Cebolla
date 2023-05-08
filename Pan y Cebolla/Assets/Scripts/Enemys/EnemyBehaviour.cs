@@ -5,15 +5,13 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
-
+    [SerializeField] int HP = 2;
     Rigidbody2D rb;
-
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-  
     }
 
     // Update is called once per frame
@@ -29,6 +27,12 @@ public class EnemyBehaviour : MonoBehaviour
         {
             rb.velocity = new Vector2(-moveSpeed, 0f);
         }
+
+        if(HP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
     private bool FacingRight()
     {
@@ -36,7 +40,24 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
-    }
+        if (collision.gameObject.CompareTag("Piso"))
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
+        }
+        if (collision.gameObject.CompareTag("Bala"))
+        {
+            Debug.Log("hit");
+            HP -= 1;
+        }
 
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.gameObject.name);
+        if (col.gameObject.CompareTag("Bala"))
+        {
+            Debug.Log("hit");
+            HP -= 1;
+        }
+    }
 }
