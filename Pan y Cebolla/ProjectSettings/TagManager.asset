@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Piso
+  - Bala
   layers:
   - Default
   - TransparentFX
@@ -11,11 +13,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Jugador
-  - AtaqueJugador
+  - Destructibles
+  - Bala
   - Piso
-  - 
-  - 
+  - Enemigos
+  - Player
   - 
   - 
   - 

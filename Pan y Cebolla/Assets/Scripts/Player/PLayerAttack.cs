@@ -31,6 +31,7 @@ public class PLayerAttack : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.LeftShift)) && PuedeDisparar())
         {
+            
             Instantiate(disparo, new Vector2(attackSpawn.transform.position.x, attackSpawn.transform.position.y), this.gameObject.transform.rotation);
             delayDisparo = Time.time + cadenciaDisparo;
             this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.SHOT;
