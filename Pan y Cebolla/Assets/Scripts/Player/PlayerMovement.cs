@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(mirandoDerecha);
         ManejarMovimiento();
         ManejarSalto();
         ManejarDash();
