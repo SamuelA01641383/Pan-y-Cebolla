@@ -7,18 +7,17 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] int HP = 2;
     Rigidbody2D rb;
-    
+    SpriteRenderer sr;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Physics2D.IgnoreLayerCollision(9, 10);
-        Physics2D.IgnoreLayerCollision(9, 9);
         if (FacingRight())
         {
             rb.velocity = new Vector2(moveSpeed, 0f);
@@ -46,18 +45,18 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bala"))
         {
+
             Debug.Log("hit");
+
             HP -= 1;
+            StartCoroutine(flasheo(0.2f));
         }
 
     }
-    void OnCollisionEnter2D(Collision2D col)
+    IEnumerator flasheo(float time)
     {
-        Debug.Log(col.gameObject.name);
-        if (col.gameObject.CompareTag("Bala"))
-        {
-            Debug.Log("hit");
-            HP -= 1;
-        }
+        sr.enabled = false;
+        yield return new WaitForSeconds(time);
+        sr.enabled = true;
     }
 }
