@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public bool mirandoDerecha;
     public bool saltando;
     private Rigidbody2D RB;
+    private Animator animator;
 
     public enum PlayerActions
     {
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         RB = this.gameObject.GetComponent<Rigidbody2D>();
+        animator = this.gameObject.GetComponent<Animator>();
 
         startDashDelay = 0.1f;
         dashDelay = 0f;
@@ -61,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
             RB.velocity = new Vector2(ejeHorizontal * velocidad, RB.velocity.y);
 
+            //Animación
+            animator.SetBool("Running", RB.velocity.x != 0f);
+
             //Dirección a la que mira 
             if (RB.velocity.x > 0f && !mirandoDerecha)
             {
@@ -85,8 +90,13 @@ public class PlayerMovement : MonoBehaviour
         // Verificar que el jugador no este ya en el aire o dasheando.
         if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH){
             RB.velocity = new Vector2(RB.velocity.x, Mathf.Sqrt(2 * fuerzaSalto * gravedad));
+
             this.saltando = true;
-        }    
+
+            //Animación
+            animator.SetBool("Jumping", saltando);
+        }
+        animator.SetFloat("FallingMoment", RB.velocity.y);
     }
 
     public void ManejarDash()
@@ -133,6 +143,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             saltando = false;
+            //Animación
+            animator.SetBool("Jumping", saltando);
         }
     }
 
@@ -142,6 +154,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             saltando = true;
+            //Animación
+            animator.SetBool("Jumping", saltando);
         }
     }
 }

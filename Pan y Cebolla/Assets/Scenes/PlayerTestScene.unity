@@ -543,6 +543,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &896533850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 221774096770674746, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+  m_PrefabInstance: {fileID: 221774097088310194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1531081405
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +686,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 221774096770674744, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
   m_PrefabInstance: {fileID: 221774097088310194}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1594660534
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896533850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13bdd9712a95fdf47b5d4508a071da55, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1802458366
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +872,26 @@ PrefabInstance:
     - target: {fileID: 221774096770674746, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 221774096770674747, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1528980442, guid: b1c6d9224f601b6499806eb722e41def, type: 3}
+    - target: {fileID: 221774096770674750, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5389838
+      objectReference: {fileID: 0}
+    - target: {fileID: 221774096770674750, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9462497
+      objectReference: {fileID: 0}
+    - target: {fileID: 221774096770674750, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 221774096770674750, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.46101606
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
