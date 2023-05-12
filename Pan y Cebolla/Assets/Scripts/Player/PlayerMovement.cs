@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     {
         DASH,
         MOVE,
-        SHOT
+        SHOT,
+        HURT
     }
 
     public PlayerActions currentAction;
@@ -127,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
                 dashDelay = startDashDelay;
             }
         }
+        animator.SetBool("Dashing", currentAction == PlayerActions.DASH);
     }
 
     private void checkDash()

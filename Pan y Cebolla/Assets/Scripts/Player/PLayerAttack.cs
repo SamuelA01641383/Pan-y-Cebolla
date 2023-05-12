@@ -6,12 +6,15 @@ public class PLayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject disparo;
     [SerializeField] GameObject attackSpawn;
+    private Animator animator;
     private float delayDisparo;
     private float cadenciaDisparo;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = this.gameObject.GetComponent<Animator>();
+
         delayDisparo = 0f;
         cadenciaDisparo = 0.5f;
     }
@@ -34,9 +37,10 @@ public class PLayerAttack : MonoBehaviour
             
             Instantiate(disparo, new Vector2(attackSpawn.transform.position.x, attackSpawn.transform.position.y), this.gameObject.transform.rotation);
             delayDisparo = Time.time + cadenciaDisparo;
-            this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.SHOT;
-            Invoke("TerminarDisparo", 0.3f);
-        } 
+            //this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.SHOT;
+            //Invoke("TerminarDisparo", 0.3f);
+        }
+        animator.SetBool("Disparando", Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.LeftShift));
     }
 
     private bool PuedeDisparar()

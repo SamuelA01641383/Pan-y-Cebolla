@@ -33,19 +33,5 @@ public class Cart : MonoBehaviour
                 cartMan.mirandoDerecha= true;
             }
         }
-
-        if (collision.gameObject.layer == 10)
-        {
-            var magnitude = 7000f;
-
-            if (this.transform.position.x >= collision.gameObject.transform.position.x)
-            {
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * magnitude);
-            }
-            else
-            {
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * magnitude);
-            }
-        }
     }
 }
