@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8927280875173454909}
   - component: {fileID: 8927280875173454907}
   - component: {fileID: 8927280875173454904}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CartMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.90797853, y: 0.53}
+  m_ConnectedAnchor: {x: -0.90797853, y: 0.52999973}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &8927280875610157109
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 8927280875610157104}
   - component: {fileID: 8927280875610157105}
   - component: {fileID: 8927280875610157070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
