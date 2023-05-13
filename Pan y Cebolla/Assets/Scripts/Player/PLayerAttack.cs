@@ -46,7 +46,8 @@ public class PLayerAttack : MonoBehaviour
     private bool PuedeDisparar()
     {
         return Time.time > delayDisparo && this.gameObject.GetComponent<PlayerMovement>().currentAction 
-            != PlayerMovement.PlayerActions.DASH; 
+            != PlayerMovement.PlayerActions.DASH && this.gameObject.GetComponent<PlayerMovement>().currentAction
+            != PlayerMovement.PlayerActions.HURT; 
     }
 
     //Se llamara desde la animación de disapro, por ahora se llama tras 0.3 segundos.

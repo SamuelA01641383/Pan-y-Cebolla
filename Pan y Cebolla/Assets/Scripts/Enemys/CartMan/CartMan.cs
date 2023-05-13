@@ -34,11 +34,15 @@ public class CartMan : MonoBehaviour
         {
             //Debug.Log(this.gameObject.name);
             HP -= 1;
+            if (HP <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
-        if (HP <= 0)
+        if (collision.gameObject.layer == 10)
         {
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<PLayerHurt>().KnockBack(collision.GetContact(0).normal);
         }
     }
 }

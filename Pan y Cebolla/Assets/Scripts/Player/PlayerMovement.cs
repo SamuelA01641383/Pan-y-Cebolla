@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(currentAction);
         checkDash();
     }
 
@@ -88,8 +89,8 @@ public class PlayerMovement : MonoBehaviour
         float ejeVertical = Input.GetAxisRaw("Vertical");
         
         //SALTO COMÚN
-        // Verificar que el jugador no este ya en el aire o dasheando.
-        if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH){
+        // Verificar que el jugador no este ya en el aire, dasheando o stuneado.
+        if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH && currentAction != PlayerActions.HURT){
             RB.velocity = new Vector2(RB.velocity.x, Mathf.Sqrt(2 * fuerzaSalto * gravedad));
 
             this.saltando = true;
@@ -133,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void checkDash()
     {
-        if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0)
+        if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0 && currentAction != PlayerActions.HURT)
         {
             currentAction = PlayerActions.DASH;
         }

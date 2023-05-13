@@ -33,5 +33,10 @@ public class Cart : MonoBehaviour
                 cartMan.mirandoDerecha= true;
             }
         }
+
+        if (collision.gameObject.layer == 10)
+        {
+            collision.gameObject.GetComponent<PLayerHurt>().KnockBack(collision.GetContact(0).normal);
+        }
     }
 }
