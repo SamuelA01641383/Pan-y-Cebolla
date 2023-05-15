@@ -6,15 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     //Variables de control para movimiento del personaje.
     private float velocidad, fuerzaSalto, gravedad;
-    private float dashSpeed, dashMultiplier, dashTime, starDashTime;
-    protected bool mirandoDerecha;
+    private float dashSpeed, dashMultiplier, dashTime, starDashTime, dashDelay, startDashDelay;
+    public bool mirandoDerecha;
     public bool saltando;
     private Rigidbody2D RB;
+    private Animator animator;
 
     public enum PlayerActions
     {
         DASH,
-        MOVE
+        MOVE,
+        SHOT,
+        HURT
     }
 
     public PlayerActions currentAction;
@@ -23,7 +26,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         RB = this.gameObject.GetComponent<Rigidbody2D>();
+        animator = this.gameObject.GetComponent<Animator>();
 
+        startDashDelay = 0.1f;
+        dashDelay = 0f;
         starDashTime = 0.15f;
         dashTime = starDashTime;
         currentAction = PlayerActions.MOVE;
@@ -46,7 +52,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(currentAction);
+        checkDash();
     }
 
     public void ManejarMovimiento()
@@ -57,6 +64,9 @@ public class PlayerMovement : MonoBehaviour
             float ejeHorizontal = Input.GetAxisRaw("Horizontal");
 
             RB.velocity = new Vector2(ejeHorizontal * velocidad, RB.velocity.y);
+
+            //Animación
+            animator.SetBool("Running", RB.velocity.x != 0f);
 
             //Dirección a la que mira 
             if (RB.velocity.x > 0f && !mirandoDerecha)
@@ -79,18 +89,23 @@ public class PlayerMovement : MonoBehaviour
         float ejeVertical = Input.GetAxisRaw("Vertical");
         
         //SALTO COMÚN
-        // Verificar que el jugador no este ya en el aire o dasheando.
-        if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH){
+        // Verificar que el jugador no este ya en el aire, dasheando o stuneado.
+        if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH && currentAction != PlayerActions.HURT){
             RB.velocity = new Vector2(RB.velocity.x, Mathf.Sqrt(2 * fuerzaSalto * gravedad));
+
             this.saltando = true;
-        }    
+
+            //Animación
+            animator.SetBool("Jumping", saltando);
+        }
+        animator.SetFloat("FallingMoment", RB.velocity.y);
     }
 
     public void ManejarDash()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentAction != PlayerActions.DASH)
+        if(dashDelay > 0f)
         {
-            currentAction = PlayerActions.DASH;
+            dashDelay -= Time.deltaTime;
         }
 
         if (currentAction == PlayerActions.DASH)
@@ -111,25 +126,39 @@ public class PlayerMovement : MonoBehaviour
                 currentAction = PlayerActions.MOVE;
                 RB.velocity = new Vector2(dashSpeed/2,0);
                 dashTime = starDashTime;
+                dashDelay = startDashDelay;
             }
+        }
+        animator.SetBool("Dashing", currentAction == PlayerActions.DASH);
+    }
+
+    private void checkDash()
+    {
+        if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0 && currentAction != PlayerActions.HURT)
+        {
+            currentAction = PlayerActions.DASH;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Verifica que el jugador se encuentre en contacto con el piso.
-        if (collision.gameObject.layer == 8 && this.transform.position.y > collision.transform.position.y)
+        if (collision.gameObject.layer == 8)
         {
             saltando = false;
+            //Animación
+            animator.SetBool("Jumping", saltando);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Verifica cuando el jugador deja de tocar el piso y entra en estado de salto.
-        if (collision.gameObject.layer == 8 && this.transform.position.y > collision.transform.position.y)
+        if (collision.gameObject.layer == 8)
         {
             saltando = true;
+            //Animación
+            animator.SetBool("Jumping", saltando);
         }
     }
 }
