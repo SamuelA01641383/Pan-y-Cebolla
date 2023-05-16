@@ -7,12 +7,14 @@ public class PLayerHurt : MonoBehaviour
     private Animator animator;
     private Rigidbody2D RB;
     private Vector2 knockBack;
-
+    private SpriteRenderer SR;
+    
     // Start is called before the first frame update
     void Start()
     {
       animator = this.gameObject.GetComponent<Animator>();
       RB = this.gameObject.GetComponent<Rigidbody2D>();
+      SR = this.gameObject.GetComponent<SpriteRenderer>();
       knockBack.x = 10;
       knockBack.y = 10;   
     }
@@ -33,6 +35,7 @@ public class PLayerHurt : MonoBehaviour
             animator.SetBool("Hurt", true);
             this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.HURT;
             Physics2D.IgnoreLayerCollision(10,9,true);
+            SR.color = new Color(1f, 1f, 1f, .5f);
         }
     }
 
@@ -43,6 +46,7 @@ public class PLayerHurt : MonoBehaviour
         animator.SetBool("Hurt", false);
         this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.MOVE;
         Physics2D.IgnoreLayerCollision(10, 9, false);
+        SR.color = new Color(1f, 1f, 1f, 1f);
     }
 
     public void KnockBack(Vector2 puntoGolpe)

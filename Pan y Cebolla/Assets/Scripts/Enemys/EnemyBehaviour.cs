@@ -6,6 +6,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] int HP = 2;
+    [SerializeField] float flash = 0.2f;
     Rigidbody2D rb;
     SpriteRenderer sr;
 
@@ -49,7 +50,7 @@ public class EnemyBehaviour : MonoBehaviour
             Debug.Log("hit");
 
             HP -= 1;
-            StartCoroutine(flasheo(0.2f));
+            StartCoroutine(flasheo(flash));
         }
 
     }
