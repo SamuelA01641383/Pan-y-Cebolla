@@ -241,6 +241,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9220116779526671673, guid: be9bbdfab38c4e3409d17bb68e8f7d13, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9220116779526671675, guid: be9bbdfab38c4e3409d17bb68e8f7d13, type: 3}
       propertyPath: m_Name
       value: CamaraSeguimiento
