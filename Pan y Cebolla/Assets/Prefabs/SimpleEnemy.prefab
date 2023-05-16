@@ -149,6 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   HP: 2
+  flash: 0.2
+  distance: 15
 --- !u!61 &5061739466251348237
 BoxCollider2D:
   m_ObjectHideFlags: 0
