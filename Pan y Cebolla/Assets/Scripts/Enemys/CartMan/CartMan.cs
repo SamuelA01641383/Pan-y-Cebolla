@@ -5,16 +5,17 @@ using UnityEngine;
 public class CartMan : MonoBehaviour
 {
  
-    int HP = 5;
-    Rigidbody2D RB;
-    float velocidadMov;
+    [SerializeField] int HP = 2;
+    [SerializeField] float velocidadMov;
+    [SerializeField] float flasheo = 0.5f;
     public bool mirandoDerecha = true;
+    Rigidbody2D RB;
 
     // Start is called before the first frame update
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
-        velocidadMov = 5f;
+        velocidadMov = 13f;
     }
 
     // Update is called once per frame
@@ -32,7 +33,9 @@ public class CartMan : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bala")
         {
-            //Debug.Log(this.gameObject.name);
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+            Invoke("recover", flasheo);
+            
             HP -= 1;
             if (HP <= 0)
             {
@@ -44,5 +47,10 @@ public class CartMan : MonoBehaviour
         {
             collision.gameObject.GetComponent<PLayerHurt>().KnockBack(collision.GetContact(0).normal);
         }
+    }
+
+    private void recover()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
     }
 }

@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5fe8893066a3b4080a919e64240759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
-  player: {fileID: 0}
+  distance: 15
   Enemy: {fileID: 5061739466251348275, guid: 11fb5943bc80e6d40a5ac3e57b8defec, type: 3}

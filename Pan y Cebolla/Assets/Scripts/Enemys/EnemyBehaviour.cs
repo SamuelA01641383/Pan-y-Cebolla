@@ -49,7 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Piso"))
+        if (collision.gameObject.CompareTag("Piso") || collision.gameObject.CompareTag("Pared"))
         {
             transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
         }
@@ -67,6 +67,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         sr.color = new Color(1,1,1,.5f);
         yield return new WaitForSeconds(time);
-        sr.color = new Color(1, 1, 1);
+        sr.color = new Color(1, 1, 1, 1);
     }
 }
