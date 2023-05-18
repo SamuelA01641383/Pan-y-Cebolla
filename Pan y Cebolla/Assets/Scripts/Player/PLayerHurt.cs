@@ -36,6 +36,7 @@ public class PLayerHurt : MonoBehaviour
             this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.HURT;
             Physics2D.IgnoreLayerCollision(10,9,true);
             SR.color = new Color(1f, 1f, 1f, .5f);
+            Invoke("FinishHurt", 0.5f);
         }
     }
 
