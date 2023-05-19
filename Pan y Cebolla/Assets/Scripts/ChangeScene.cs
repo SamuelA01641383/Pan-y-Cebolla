@@ -20,7 +20,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("PlayerTestScene");
+            SceneManager.LoadScene("Level1");
         }
     }
 }
