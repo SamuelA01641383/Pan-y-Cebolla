@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PLayerHurt : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PLayerHurt : MonoBehaviour
     private Rigidbody2D RB;
     private Vector2 knockBack;
     private SpriteRenderer SR;
+    private float HP = 5;
     
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,19 @@ public class PLayerHurt : MonoBehaviour
             Physics2D.IgnoreLayerCollision(10,9,true);
             SR.color = new Color(1f, 1f, 1f, .5f);
             Invoke("FinishHurt", 0.5f);
+            HP -= 1;
+            if(HP == 0)
+            {
+                Invoke("Dead", 0.1f);
+            }
         }
+    }
+    public void Dead()
+    {
+        HP = 5;
+        Scene Escena = SceneManager.GetActiveScene();
+        string estaEscena = Escena.name; 
+        SceneManager.LoadScene(estaEscena);
     }
 
     //Se llama en el ultimo frame de la animación de HURT.
