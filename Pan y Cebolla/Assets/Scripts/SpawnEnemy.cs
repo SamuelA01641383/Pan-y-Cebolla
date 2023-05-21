@@ -22,7 +22,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (Vector2.Distance(T.position, player.transform.position) <= distance && !Flag)
         {
-            Debug.Log("h");
+            // Guardar la instancia como varialbe, agregar a todos los enemigos un script rotación con la variable mirandoderecha
             Instantiate(Enemy, new Vector2(T.position.x, T.position.y),this.gameObject.transform.rotation);
             Flag = true;
         }

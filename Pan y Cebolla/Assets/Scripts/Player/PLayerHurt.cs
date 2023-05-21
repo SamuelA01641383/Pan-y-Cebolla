@@ -43,7 +43,7 @@ public class PLayerHurt : MonoBehaviour
     //Se llama en el ultimo frame de la animación de HURT.
     public void FinishHurt()
     {
-        Debug.Log("Finish hurt");
+        //Debug.Log("Finish hurt");
         animator.SetBool("Hurt", false);
         this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.MOVE;
         Physics2D.IgnoreLayerCollision(10, 9, false);

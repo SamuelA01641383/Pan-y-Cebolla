@@ -24,11 +24,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (FacingRight())
         {
-            rb.velocity = new Vector2(moveSpeed, 0f);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
         }
         else
         {
-            rb.velocity = new Vector2(-moveSpeed, 0f);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
 
         if(HP <= 0)
