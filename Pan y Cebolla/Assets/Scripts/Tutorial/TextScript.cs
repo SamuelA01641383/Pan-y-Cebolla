@@ -14,15 +14,13 @@ public class TextScript : MonoBehaviour
     private string[] lineas = new string[3];
     private int lineNum = 0;
     private int index = 0;
-    private float delay = 1f;
-    private bool changeline = false;
-    private int current = 0;
     private bool firstLine = true;
     private bool clear = false;
     private bool go = false;
 
     [SerializeField] AnimatedPlayer animatedPlayer;
     [SerializeField] GameObject spaceBar;
+    [SerializeField] GameObject fadeInScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +84,7 @@ public class TextScript : MonoBehaviour
             if(lineNum == 2)
             {
                 animatedPlayer.updateCurrent();
+                Invoke("fadeIn", 3f);
             }
 
             lineNum++;
@@ -98,5 +97,10 @@ public class TextScript : MonoBehaviour
                 firstLine = false;
             }
         }
+    }
+
+    private void fadeIn()
+    {
+        fadeInScreen.gameObject.SetActive(true);
     }
 }

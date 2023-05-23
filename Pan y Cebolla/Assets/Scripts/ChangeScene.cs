@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
     private AssetBundle ab;
+    [SerializeField] GameObject fadeIn_;
+
     void Start()
     {
     }
@@ -14,6 +16,16 @@ public class ChangeScene : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void changeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void fadeIn()
+    {
+        fadeIn_.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -5,17 +5,14 @@ using UnityEngine;
 public class AnimatedPlayer : MonoBehaviour
 {
     private Animator animator;
-    private Rigidbody2D RB;
     public int current = 0;
     private bool running = false;
-    private int cont = 0;
     [SerializeField] private Animator house;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        RB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
