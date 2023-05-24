@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisparoJugador : MonoBehaviour
 {
-    private float velocidad, lifeSpan;
+        private float velocidad, lifeSpan;
     //private float dano;
 
     // Start is called before the first frame update
