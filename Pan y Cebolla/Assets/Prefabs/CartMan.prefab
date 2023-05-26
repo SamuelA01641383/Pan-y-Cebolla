@@ -123,6 +123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e81574a5ba27f4fb7722a1d04542b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 2
+  velocidadMov: 0
+  flasheo: 0.5
+  distance: 15
+  right: {fileID: 5224044053392802750, guid: c00f7cc2d4018024fb85e702c57a619f, type: 3}
   mirandoDerecha: 1
 --- !u!70 &8927280875173454907
 CapsuleCollider2D:

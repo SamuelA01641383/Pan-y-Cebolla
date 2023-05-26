@@ -151,6 +151,7 @@ MonoBehaviour:
   HP: 2
   flash: 0.2
   distance: 15
+  right: {fileID: 5224044053392802750, guid: c00f7cc2d4018024fb85e702c57a619f, type: 3}
 --- !u!61 &5061739466251348237
 BoxCollider2D:
   m_ObjectHideFlags: 0

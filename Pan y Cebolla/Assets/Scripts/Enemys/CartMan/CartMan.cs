@@ -10,9 +10,9 @@ public class CartMan : MonoBehaviour
     [SerializeField] float velocidadMov;
     [SerializeField] float flasheo = 0.5f;
     [SerializeField] float distance = 15f;
-
+    [SerializeField] SpawnEnemy right;
     private GameObject player;
-    public bool mirandoDerecha = true;
+    public bool mirandoDerecha;
     Rigidbody2D RB;
 
     // Start is called before the first frame update
@@ -21,6 +21,12 @@ public class CartMan : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         velocidadMov = 13f;
+        mirandoDerecha = right.isRight;
+        if (!mirandoDerecha)
+        {
+            this.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            mirandoDerecha = false;
+        }
     }
 
     // Update is called once per frame

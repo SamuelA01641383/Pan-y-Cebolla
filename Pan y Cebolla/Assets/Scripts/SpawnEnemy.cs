@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] float distance;
+    [SerializeField] public bool isRight;
     private GameObject player;
     public GameObject Enemy;
     private Transform T;
@@ -15,6 +16,7 @@ public class SpawnEnemy : MonoBehaviour
         T = this.transform;
         Flag = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame

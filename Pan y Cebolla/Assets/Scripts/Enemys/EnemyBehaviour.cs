@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] int HP = 2;
     [SerializeField] float flash = 0.2f;
     [SerializeField] float distance = 10f;
+    [SerializeField] SpawnEnemy right;
     private GameObject player;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -17,6 +18,10 @@ public class EnemyBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
+        if (!right.isRight)
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
+        }
     }
 
     // Update is called once per frame
