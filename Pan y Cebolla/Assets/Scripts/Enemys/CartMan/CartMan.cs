@@ -9,7 +9,7 @@ public class CartMan : MonoBehaviour
     [SerializeField] int HP = 2;
     [SerializeField] float velocidadMov;
     [SerializeField] float flasheo = 0.5f;
-    [SerializeField] float distance = 10f;
+    [SerializeField] float distance = 15f;
 
     private GameObject player;
     public bool mirandoDerecha = true;

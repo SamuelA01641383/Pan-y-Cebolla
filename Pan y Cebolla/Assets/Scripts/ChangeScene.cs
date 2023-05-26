@@ -20,7 +20,14 @@ public class ChangeScene : MonoBehaviour
 
     public void changeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if (SceneManager.GetActiveScene().name == "TutorialCinematic")
+        {
+            SceneManager.LoadScene("TutorialLevel");
+
+        }else if (SceneManager.GetActiveScene().name == "TutorialLevel")
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     public void fadeIn()
@@ -32,7 +39,8 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level1");
+            //SceneManager.LoadScene("Level1");
+            fadeIn();
         }
     }
 }
