@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
     private AssetBundle ab;
-    [SerializeField] GameObject fadeIn_;
+    [SerializeField] FadeEffect fadeInScreen;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class ChangeScene : MonoBehaviour
         
     }
 
-    public void changeScene(string sceneName)
+    public void changeScene()
     {
         if (SceneManager.GetActiveScene().name == "TutorialCinematic")
         {
@@ -32,14 +32,17 @@ public class ChangeScene : MonoBehaviour
 
     public void fadeIn()
     {
-        fadeIn_.gameObject.SetActive(true);
+        if (fadeInScreen.isActiveAndEnabled)
+        {
+            fadeInScreen.fadeIn();
+        }
+        Invoke("changeScene", 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            //SceneManager.LoadScene("Level1");
             fadeIn();
         }
     }

@@ -20,7 +20,7 @@ public class TextScript : MonoBehaviour
 
     [SerializeField] AnimatedPlayer animatedPlayer;
     [SerializeField] GameObject spaceBar;
-    [SerializeField] GameObject fadeInScreen;
+    [SerializeField] FadeEffect fadeInScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +101,12 @@ public class TextScript : MonoBehaviour
 
     private void fadeIn()
     {
-        fadeInScreen.gameObject.SetActive(true);
+        fadeInScreen.fadeIn();
+        Invoke("goTutorial", 1f);
+    }
+
+    private void goTutorial()
+    {
+        fadeInScreen.gameObject.GetComponent<ChangeScene>().changeScene();
     }
 }

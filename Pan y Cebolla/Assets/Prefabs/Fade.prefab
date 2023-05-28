@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2958818658274325309}
   - component: {fileID: 2958818658274325310}
   - component: {fileID: 2958818658274325308}
+  - component: {fileID: 479288833}
+  - component: {fileID: 479288834}
   m_Layer: 5
-  m_Name: FadeOut
+  m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,3 +100,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &479288833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958818658274325280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fcbe8d94b80d5469394a9c3829ee80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn_: {fileID: 2958818658274325280}
+--- !u!114 &479288834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958818658274325280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d2df933892d68459b0188259d1d89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
