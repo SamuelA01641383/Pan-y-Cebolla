@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class PLayerHurt : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D RB;
     private Vector2 knockBack;
     private SpriteRenderer SR;
-    [SerializeField] int HP;
+    private int HP;
+    [SerializeField] int HPsetting;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,9 @@ public class PLayerHurt : MonoBehaviour
       RB = this.gameObject.GetComponent<Rigidbody2D>();
       SR = this.gameObject.GetComponent<SpriteRenderer>();
       knockBack.x = 10;
-      knockBack.y = 10;   
+      knockBack.y = 10;
+      HP = HPsetting;
+      name = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -33,27 +35,43 @@ public class PLayerHurt : MonoBehaviour
         //Recibir daño.
         if (collision.gameObject.layer == 9)
         {
-            //Animación
-            animator.SetBool("Hurt", true);
-            this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.HURT;
-            Physics2D.IgnoreLayerCollision(10,9,true);
-            SR.color = new Color(1f, 1f, 1f, .5f);
-            Invoke("FinishHurt", 0.5f);
+            
             HP -= 1;
-            if(HP == 0)
+            if (HP <= 0)
             {
-                Invoke("Dead", 0.1f);
+                animator.SetBool("Dead", true);
+                this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.DEAD;
+                Physics2D.IgnoreLayerCollision(10, 9, true);
+                SR.color = new Color(1f, 1f, 1f, .5f);
             }
+            else
+            {
+                //Animación
+                animator.SetBool("Hurt", true);
+                this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.HURT;
+                Physics2D.IgnoreLayerCollision(10, 9, true);
+                SR.color = new Color(1f, 1f, 1f, .5f);
+                Invoke("FinishHurt", 0.5f);
+            }
+            
         }
     }
-    public void Dead()
+
+    public void FinishDead()
     {
-        HP = 5;
-        Scene Escena = SceneManager.GetActiveScene();
-        string estaEscena = Escena.name; 
-        SceneManager.LoadScene(estaEscena);
+        SR.color = new Color(1f, 1f, 1f, 1f);
+        reload();
     }
 
+    private void reload()
+    {
+
+
+        //change.fadeIn();
+        SceneManager.LoadScene(name);
+        Physics2D.IgnoreLayerCollision(10, 9, false);
+        HP = HPsetting;
+    }
     //Se llama en el ultimo frame de la animación de HURT.
     public void FinishHurt()
     {

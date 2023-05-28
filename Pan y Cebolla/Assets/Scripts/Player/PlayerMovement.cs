@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
         DASH,
         MOVE,
         SHOT,
-        HURT
+        HURT, 
+        DEAD
     }
 
     public PlayerActions currentAction;
@@ -54,8 +55,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log(currentAction);
         checkDash();
+        
     }
-
     public void ManejarMovimiento()
     {
         if( currentAction == PlayerActions.MOVE)
@@ -81,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
                 this.mirandoDerecha = false;
             }
         }
+        
     }
 
     public void ManejarSalto()
@@ -134,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void checkDash()
     {
-        if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0 && currentAction != PlayerActions.HURT)
+        if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0 && currentAction != PlayerActions.HURT && currentAction != PlayerActions.DEAD)
         {
             currentAction = PlayerActions.DASH;
         }

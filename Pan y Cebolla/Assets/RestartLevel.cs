@@ -20,7 +20,6 @@ public class RestartLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("h");
             name = SceneManager.GetActiveScene().name;
             
             //Hay un script llamado FadeEffect en el objeto fade con las funciones de fadeIn y fadeOut para activar las animaciones.
