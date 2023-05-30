@@ -3521,6 +3521,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7808021247847803803, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
     - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
+      propertyPath: HPsetting
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
       propertyPath: fadeInScreen
       value: 
       objectReference: {fileID: 1706118950}
