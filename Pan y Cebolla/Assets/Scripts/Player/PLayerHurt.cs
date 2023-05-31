@@ -10,10 +10,13 @@ public class PLayerHurt : MonoBehaviour
     private SpriteRenderer SR;
     private int HP;
     [SerializeField] int HPsetting;
+    private BarraVida barraVida;
     
     // Start is called before the first frame update
     void Start()
     {
+      barraVida = FindObjectOfType<BarraVida>();
+
       animator = this.gameObject.GetComponent<Animator>();
       RB = this.gameObject.GetComponent<Rigidbody2D>();
       SR = this.gameObject.GetComponent<SpriteRenderer>();
@@ -53,7 +56,8 @@ public class PLayerHurt : MonoBehaviour
                 SR.color = new Color(1f, 1f, 1f, .5f);
                 Invoke("FinishHurt", 0.5f);
             }
-            
+
+            barraVida.setHP();
         }
     }
 
@@ -85,5 +89,15 @@ public class PLayerHurt : MonoBehaviour
     public void KnockBack(Vector2 puntoGolpe)
     {
         RB.velocity = new Vector2(-knockBack.x * puntoGolpe.x, knockBack.y);
+    }
+
+    public int getHP()
+    {
+        return HP;
+    }
+
+    public int getMaxHP()
+    {
+        return HPsetting;
     }
 }

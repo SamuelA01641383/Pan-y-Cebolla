@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool saltando;
     private Rigidbody2D RB;
     private Animator animator;
+    private int airDashCounter = 2;
 
     public enum PlayerActions
     {
@@ -138,7 +139,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && currentAction != PlayerActions.DASH && dashDelay <= 0 && currentAction != PlayerActions.HURT && currentAction != PlayerActions.DEAD)
         {
-            currentAction = PlayerActions.DASH;
+            if (saltando && airDashCounter > 0)
+            {
+                airDashCounter--;
+                currentAction = PlayerActions.DASH;
+            }
+            else if(!saltando)
+            {
+                currentAction = PlayerActions.DASH;
+            }
         }
     }
 
@@ -148,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             saltando = false;
+            airDashCounter = 2;
             //Animación
             animator.SetBool("Jumping", saltando);
         }
@@ -159,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             saltando = true;
+
             //Animación
             animator.SetBool("Jumping", saltando);
         }
