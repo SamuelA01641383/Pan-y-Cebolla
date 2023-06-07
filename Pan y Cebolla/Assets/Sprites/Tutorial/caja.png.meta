@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f2d985eb242d5f42b63a73b5539ee72
+guid: d1883c85a008ac14198ee1034bef66ce
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,85 +117,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Destructibles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e524f60827b6f5742bd5b523434f9af0
-      internalID: -1886789974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Destructibles_1
+      name: caja_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b940048c969caac4785a75efcda9f390
-      internalID: 136406969
+      spriteID: dd9e8898805763742b1b1e3cf03cf006
+      internalID: -678865652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destructibles_2
+      name: caja_1
       rect:
         serializedVersion: 2
-        x: 68
+        x: 64
         y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 64
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f3c06abfc1edbd43b84f8b1bcd3d242
-      internalID: -2037747114
+      spriteID: 4d2d5674ce282ff4f9a2722e8c8f28bd
+      internalID: 1182213859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destructibles_3
+      name: caja_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 1
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 0
+        width: 64
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1f02e2b4347d2349b89dd3d38cd59e1
-      internalID: 506803033
+      spriteID: 385bd24130a80ee42b45e3a0cab3adda
+      internalID: 1017688194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caja_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1331537f8231c2949a75ce4d714d0765
+      internalID: 720512143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caja_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c20b5df6f9ddc47be021160b61a93b
+      internalID: -1162929779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caja_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2b21c3d57b9624c88cbc1f3d9e5a9f
+      internalID: -1290522825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caja_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c572ec83546e41478bf875b7b827f34
+      internalID: -1190291934
       vertices: []
       indices: 
       edges: []
@@ -211,10 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Destructibles_0: -1886789974
-      Destructibles_1: 136406969
-      Destructibles_2: -2037747114
-      Destructibles_3: 506803033
+      caja_0: -678865652
+      caja_1: 1182213859
+      caja_2: 1017688194
+      caja_3: 720512143
+      caja_4: -1162929779
+      caja_5: -1290522825
+      caja_6: -1190291934
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

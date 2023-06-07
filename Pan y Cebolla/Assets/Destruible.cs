@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Destruible : MonoBehaviour
 {
+    private Animator animator;
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,13 @@ public class Destruible : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bala"))
         {
-            Destroy(this.gameObject);
+            //Physics2D.IgnoreLayerCollision(10, 9, false);
+            animator.SetBool("Destruir", true);
         }
+    }
+
+    public void destruirObjeto()
+    {
+        Destroy(this.gameObject);
     }
 }
