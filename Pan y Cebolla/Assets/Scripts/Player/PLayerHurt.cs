@@ -82,10 +82,13 @@ public class PLayerHurt : MonoBehaviour
         //Debug.Log("Finish hurt");
         animator.SetBool("Hurt", false);
         this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.MOVE;
+        Invoke("Invencible", 1.5f);
+    }
+    public void Invencible()
+    {
         Physics2D.IgnoreLayerCollision(10, 9, false);
         SR.color = new Color(1f, 1f, 1f, 1f);
     }
-
     public void KnockBack(Vector2 puntoGolpe)
     {
         RB.velocity = new Vector2(-knockBack.x * puntoGolpe.x, knockBack.y);

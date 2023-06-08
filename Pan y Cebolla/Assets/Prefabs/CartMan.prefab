@@ -126,7 +126,7 @@ MonoBehaviour:
   HP: 2
   velocidadMov: 0
   flasheo: 0.5
-  distance: 15
+  distance: 20
   right: {fileID: 5224044053392802750, guid: c00f7cc2d4018024fb85e702c57a619f, type: 3}
   mirandoDerecha: 1
 --- !u!70 &8927280875173454907
