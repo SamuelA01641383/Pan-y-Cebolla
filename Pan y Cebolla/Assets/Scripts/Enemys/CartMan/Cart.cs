@@ -20,7 +20,7 @@ public class Cart : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 12)
+        if (collision.gameObject.layer == 12 || collision.gameObject.layer == 6)
         {
             if (cartMan.mirandoDerecha)
             {

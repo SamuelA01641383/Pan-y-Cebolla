@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Verifica que el jugador se encuentre en contacto con el piso.
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 6)
         {
             saltando = false;
             airDashCounter = 2;
@@ -166,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Verifica cuando el jugador deja de tocar el piso y entra en estado de salto.
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 6)
         {
             saltando = true;
 
