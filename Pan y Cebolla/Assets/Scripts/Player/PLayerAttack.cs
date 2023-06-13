@@ -6,6 +6,7 @@ public class PLayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject disparo;
     [SerializeField] GameObject attackSpawn;
+    [SerializeField] AudioSource ShootSound;
     private Animator animator;
     private float delayDisparo;
     private float cadenciaDisparo;
@@ -34,7 +35,7 @@ public class PLayerAttack : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.LeftShift)) && PuedeDisparar())
         {
-            
+            ShootSound.Play();
             Instantiate(disparo, new Vector2(attackSpawn.transform.position.x, attackSpawn.transform.position.y), this.gameObject.transform.rotation);
             delayDisparo = Time.time + cadenciaDisparo;
             //this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.SHOT;

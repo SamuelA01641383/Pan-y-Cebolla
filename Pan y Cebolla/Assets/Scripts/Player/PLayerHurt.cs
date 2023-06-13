@@ -38,7 +38,7 @@ public class PLayerHurt : MonoBehaviour
         //Recibir daño.
         if (collision.gameObject.layer == 9)
         {
-            
+            Debug.Log("hola");
             HP -= 1;
             if (HP <= 0)
             {
@@ -102,5 +102,12 @@ public class PLayerHurt : MonoBehaviour
     public int getMaxHP()
     {
         return HPsetting;
+    }
+    public void freeze()
+    {
+        animator.SetBool("Dead", true);
+        this.gameObject.GetComponent<PlayerMovement>().currentAction = PlayerMovement.PlayerActions.DEAD;
+        Physics2D.IgnoreLayerCollision(10, 9, true);
+        SR.color = new Color(1f, 1f, 1f, .5f);
     }
 }
