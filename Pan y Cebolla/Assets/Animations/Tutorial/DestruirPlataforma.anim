@@ -21,7 +21,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -2037747114, guid: 3f2d985eb242d5f42b63a73b5539ee72, type: 3}
-    - time: 2.1666667
+    - time: 4
       value: {fileID: -2037747114, guid: 3f2d985eb242d5f42b63a73b5539ee72, type: 3}
     attribute: m_Sprite
     path: 
@@ -49,7 +49,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.1833334
+    m_StopTime: 4.016667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -69,7 +69,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 2.1666667
+  - time: 4
     functionName: destruirObjeto
     data: 
     objectReferenceParameter: {fileID: 0}
