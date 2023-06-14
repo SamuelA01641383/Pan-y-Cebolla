@@ -43,12 +43,13 @@ public class Ingrediente : MonoBehaviour
     private void fade()
     {
         fadeScreen.fadeIn();
+
+        Debug.Log(SceneManager.GetActiveScene().name);
         if(SceneManager.GetActiveScene().name == "Level1")
         {
             Invoke("goLevel2", 2f);
-        }
 
-        if (SceneManager.GetActiveScene().name == "Level2")
+        }else if (SceneManager.GetActiveScene().name == "Level2")
         {
             Invoke("goEnd", 2f);
         }
