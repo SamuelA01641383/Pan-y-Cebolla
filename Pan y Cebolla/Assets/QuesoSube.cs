@@ -13,7 +13,7 @@ public class QuesoSube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += new Vector3(0, 0.005f, 0);
+        this.transform.position += new Vector3(0, 0.02f, 0);
     }
 
 
