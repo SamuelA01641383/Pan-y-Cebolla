@@ -11,6 +11,7 @@ public class PLayerHurt : MonoBehaviour
     private int HP;
     [SerializeField] int HPsetting;
     private BarraVida barraVida;
+    [SerializeField] AudioSource Fx;
     
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class PLayerHurt : MonoBehaviour
         //Recibir daño.
         if (collision.gameObject.layer == 9)
         {
+            Fx.Play();
             Debug.Log("hola");
             HP -= 1;
             if (HP <= 0)

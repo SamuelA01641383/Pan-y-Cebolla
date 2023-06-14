@@ -10128,26 +10128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
-      propertyPath: HP
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
-      propertyPath: change
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
-      propertyPath: Restart
-      value: 
-      objectReference: {fileID: -7808021247847803803, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
-    - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
-      propertyPath: HPsetting
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594660540, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
-      propertyPath: fadeInScreen
-      value: 
-      objectReference: {fileID: 1706118950}
     - target: {fileID: 221774096770674744, guid: d2cc8d07ee73969478306bb3e28a681d, type: 3}
       propertyPath: m_RootOrder
       value: 12
