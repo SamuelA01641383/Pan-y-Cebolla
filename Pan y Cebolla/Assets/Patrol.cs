@@ -8,7 +8,6 @@ public class Patrol : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] int HP = 2;
     [SerializeField] float flash = 0.2f;
-    [SerializeField] float distance = 10f;
     [SerializeField] bool right;
     private GameObject player;
     Rigidbody2D rb;

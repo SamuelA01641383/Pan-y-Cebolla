@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class AnimatedPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        running = false;
+        if (running)
+        {
+            Debug.Log("ala");
+        }
         animator = GetComponent<Animator>();
     }
 
