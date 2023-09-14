@@ -11,3 +11,5 @@ This project will not be commercialized or distributed for profit. It is intende
 we are willing to cooperate and take the necessary measures to comply with your legal requirements.
 
 We appreciate your understanding and are committed to respecting and protecting the copyrights of the material used in this project.
+
+You can find the game here: https://drive.google.com/drive/folders/1iXHmLPOC4vRDvz251GbqZhiB3jzRJuFs?usp=sharing
