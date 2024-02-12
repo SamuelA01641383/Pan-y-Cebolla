@@ -34,6 +34,7 @@ public class Ingrediente : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().SetBool("Victory", true);
             collision.gameObject.GetComponent<PlayerMovement>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+            collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             //this.gameObject.GetComponent<Animator>().SetBool("hold", true);
         }
 

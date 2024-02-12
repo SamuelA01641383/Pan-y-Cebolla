@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 99df10d43ea8d8443b1388cfb4da9cf1, type: 3}
     - target: {fileID: 8010541184147747122, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
       propertyPath: m_Color.a
-      value: 0.8862745
+      value: 0.95686275
       objectReference: {fileID: 0}
     - target: {fileID: 8010541184147747122, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
       propertyPath: m_Color.b
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8010541184147747123, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2.789551
       objectReference: {fileID: 0}
     - target: {fileID: 8010541184147747123, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
       propertyPath: m_LocalScale.z
@@ -297,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8010541184147747123, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.1
+      value: -18.4
       objectReference: {fileID: 0}
     - target: {fileID: 8010541184147747123, guid: 86328474053408740bbccd11ba2d2c01, type: 3}
       propertyPath: m_LocalPosition.z
@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PL: {fileID: 1766880960}
+  Speed: 0.5
 --- !u!61 &30939118
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         
         //SALTO COMÚN
         // Verificar que el jugador no este ya en el aire, dasheando o stuneado.
-        if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH && currentAction != PlayerActions.HURT){
+        if (ejeVertical > 0f && !saltando && currentAction != PlayerActions.DASH && currentAction != PlayerActions.HURT && currentAction != PlayerActions.DEAD){
             RB.velocity = new Vector2(RB.velocity.x, Mathf.Sqrt(2 * fuerzaSalto * gravedad));
 
             this.saltando = true;

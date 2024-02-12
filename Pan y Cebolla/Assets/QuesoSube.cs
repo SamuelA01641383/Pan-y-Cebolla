@@ -5,6 +5,7 @@ using UnityEngine;
 public class QuesoSube : MonoBehaviour
 {
     [SerializeField] PLayerHurt PL;
+    [SerializeField] public float Speed;
     void Start()
     {
         
@@ -13,7 +14,7 @@ public class QuesoSube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += new Vector3(0, 0.02f, 0);
+        this.transform.position += new Vector3(0, Speed *Time.deltaTime, 0);
     }
 
 
